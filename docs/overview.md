@@ -54,13 +54,8 @@ It can be expected that this application will be compatible with the Tor browser
 
 ## Storage:
 
-### Document Storage
-- Format: Preferably JSON, however content & information should be in markdown format, to be beautiful when rendered in the UI
-- S3 via Seaweed FS: stores documents
-- DuckDB for the relational database + vector store + document index
-- Docker containers to deploy scripts & applications that return data 
-
-### Database
+- [Document Storage](docs/storage/documents.md)
+- [Database](docs/storage/database.md)
 
 ## AI/ML
 
