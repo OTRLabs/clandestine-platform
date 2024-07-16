@@ -25,9 +25,9 @@ config:
     
 
   
-  database_config:
-    database_host: "localhost"
-    database_port: 5432
-    database_name: "contiplatform"
-    database_user: "conti"
-    database_password: "randompassword"
+  duckdb_database_config:
+    duckdb_database_host: "localhost"
+    duckdb_database_port: 5432
+    duckdb_database_name: "contiplatform"
+    duckdb_database_user: "conti"
+    duckdb_database_password: "randompassword"

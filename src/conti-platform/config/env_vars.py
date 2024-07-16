@@ -1,10 +1,9 @@
 
 
-class DatabaseConfig:
-    DATABASE_NAME = 'cryptcloud'
-    DATABASE_USER = 'cryptcloud'
-    DATABASE_PASSWORD = 'cryptcloud'
+import dotenv
+from typing import Any, Dict, List, Union
 
-class Config:
-    DEBUG = False
-    TESTING = False
+CONFIG_FILE_PATH = "config.yaml"
+
+class DatabaseConfig:
+    

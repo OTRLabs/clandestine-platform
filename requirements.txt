@@ -3,4 +3,5 @@ sqlalchemy
 litestar-users
 advanced-alchemy
 bcrypt
-pyyaml
+python-dotenv
+docker
