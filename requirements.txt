@@ -2,3 +2,4 @@ litestar
 sqlalchemy
 litestar-users
 advanced-alchemy
+bcrypt
