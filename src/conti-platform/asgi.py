@@ -5,7 +5,7 @@ from litestar.response import Template
 from litestar.template.config import TemplateConfig
 
 ## build the application
-def create_litestar_app():
+def create_litestar_app() -> Litestar:
     
     cryptcloud_app = Litestar(
         #route_handlers=[]
