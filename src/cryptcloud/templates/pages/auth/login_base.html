@@ -1,0 +1,28 @@
+{% extends "auth_base.html" %}
+    
+    {% block content %}
+
+
+    <div class="auth-container">
+        <div class="auth-header">
+            <h1 class="auth-title">Login</h1>
+        </div>
+        <div class="auth-content">
+            <form class="pure-form pure-form-stacked" action="/login" method="post">
+                <fieldset>
+                    <label for="username">Username</label>
+                    <input id="username" name="username" type="text" required>
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" required>
+                    <button type="submit" class="pure-button pure-button-primary">Login</button>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="auth-footer">
+            <p>Don't have an account? <a href="/register">Register</a></p>
+        </div>
+    </div>
+    {% endblock content %}
+
+    
