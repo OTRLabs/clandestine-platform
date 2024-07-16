@@ -1,18 +1,15 @@
-# CryptCloud Platform: Building a Red Team’s “Everything App”
+# Conti Platform: A Platform for Organizations Hacking the Planet
 ---
 
-# 1. Introduction
-## what is an everything app?
-For the sake of this project, we will define an “*everything app*" as: 
-> An `application` that is the **primary** `tool`/`environment` that you use for your *workflow*.
+## Introduction
 
-This project assumes your workflow is, in some way related to offensive security.
+This project is an attempt at building what could be looked at as Google Workspace, but the assumes your workflow is, in some way related to offensive security, and evading attribution is a priority for your operation(s).
 
 ### what are the considerations you have to make when creating applications for this field
 
-On one hand, I want to say “chill I am a one man show, do not expect this application to be Fort Knox.”. And on some level that is true, please assume that this application, like any other has vulnerabilities. 
+On one hand, I want to say “chill I am a one man show, do not expect this application to be Fort Knox.”. And on some level that is true, please assume that this application, like any other has vulnerabilities. But I do want to make this application as secure as possible, and I do want to make it so that it is not a liability to use.
 
-- best practices with using HTMX for the UI. I have heard of multiple security issues in HTMX, but never checked up on them. We will need to look into that before using it. I assume there are safe ways to use it and unsafe ways. In general, I think I will render data using templates, and have HTMX only exist for reactivity? Not sure. I don’t think I want to be querying the database with HTMX, and instead I want to have the HTMX reload sections of the larger HTML template to render sanitized data from the database in the correct format. (This could be wrong)
+
 
 # 2. Tech Stack:
 
@@ -20,12 +17,19 @@ The app is built around [Litestar](https://litestar.dev) as the backend & main "
 
 ---
 
+## Backend:
+
+### Backend Tech Stack
+- [Litestar](https://litestar.dev) 
+- [DuckDB](https://duckdb.org/) (For user storage)
+
+
 ## Dashboard / UI:
 
 ### UI Tech Stack
 
-- [Litestar](https://litestar.dev) 
-- [HTMX](https://htmx.org/) + [Litestar HTMX Integration](https://docs.litestar.dev/2/usage/htmx.html) 
+- [Litestar HTMX Integration](https://docs.litestar.dev/2/usage/htmx.html) 
+- [HTMX](https://htmx.org/) 
 - [Jinja2 Templates](https://docs.litestar.dev/2/reference/contrib/jinja.html) 
 - [Pure CSS](https://purecss.io/)
 
