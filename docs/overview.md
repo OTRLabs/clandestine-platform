@@ -61,7 +61,15 @@ It can be expected that this application will be compatible with the Tor browser
 In the field of AI/ML, we will leverage the high-quality prompts provided by Fabric to create Ollama Model Files. These files will be finely tuned for specific tasks, ensuring optimal performance and accuracy. By utilizing Fabric's prompts, we can train our models to excel in various domains and achieve the desired outcomes.
 ### AI/ML Tech Stack
 - [Fabric](https://github.com/danielmiessler/fabric): A 
+# Privacy & Security:
 
+## AI Privacy
+
+TL;DR: we will self host open source models. There is just no reason to use 3rd party APIs, where these tokens add up. If you want to use faster LLMs maybe we will offer a cloud platform 
+
+I am going to have Ollama be the standard choice. The open source nature + model files for building highly optimized models is great! This combined with fabric will make for effective chat, analysis and summarization 
+
+We will use hugging face for decision making if it comes to that
 ### Networking Practices
 
 Generally speaking, we do not want to expose our operations to the internet at large.
