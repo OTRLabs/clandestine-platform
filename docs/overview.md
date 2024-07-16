@@ -3,10 +3,11 @@
 
 # 1. Introduction
 ---
-This project is an attempt at building what could be looked at as Google Workspace, but the assumes the following:
+This project is an attempt at building what could be looked at as `Google Workspace`, but the assumes the following:
 - your workflow is, in some way related to `offensive security`
 - evading `attribution` is a **priority** for your `operation(s)`.
-
+- secure & discreet collaboration is a **priority** for your `operation(s)`.
+- you want to use `AI/ML` to make your `operation(s)` more effective.
 ### what are the considerations you have to make when creating applications for this field
 
 On one hand, I want to say “chill I am a one man show, do not expect this application to be Fort Knox.”. And on some level that is true, please assume that this application, like any other has vulnerabilities. But I do want to make this application as secure as possible, and I do want to make it so that it is not a liability to use.
@@ -40,6 +41,7 @@ On one hand, I want to say “chill I am a one man show, do not expect this appl
 ### Data Ingestion Tech Stack
 - Docker based scripts
 - Project Discovery Tools
+- [Network Scanning](docs/data_ingestion/network_scanning.md)
 
 
 
@@ -64,9 +66,12 @@ That being said:
 - Our AI/ML systems still have to be able to reach the internet to download models, and preform searches.
 - Basically, we need to be exposed sometimes, but we want to do it "right"
 
-#### UI Access
+#### Secure Access / Ingress Points & Eggress Points
 I have a few ideas on how to access the UI:
-- HeadScale / Tailscale: This is a VPN service that is designed to be easy to use and set up. It is designed to be self hosted
-- Tor Hidden Service: Need to do more research, and testing to see how well this works. This is less than ideal, so will be optional at most
 
-#### [Network Scanning](docs/data_ingestion/network_scanning.md)
+- [OnionCat](https://www.onioncat.org/): This is a VPN service that is designed to be easy to use and set up. It is designed to be self hosted & operate over `Tor` & `I2P`
+- [HeadScale](https://headscale.net/) / [Tailscale](https://tailscale.com): This is a VPN service that is designed to be easy to use and set up. It is designed to be self hosted
+
+#### Service Exposure
+Hidden Services:
+-  [Tor Hidden Services](https://www.torproject.org/docs/tor-onion-service.html.en) are a great way to expose services to the internet without exposing your IP address. This is a great way to expose the UI to the internet without exposing your IP address. 
