@@ -3,7 +3,9 @@
 
 ## Introduction
 
-This project is an attempt at building what could be looked at as Google Workspace, but the assumes your workflow is, in some way related to offensive security, and evading attribution is a priority for your operation(s).
+This project is an attempt at building what could be looked at as Google Workspace, but the assumes the following:
+- your workflow is, in some way related to `offensive security`
+- evading `attribution` is a **priority** for your `operation(s)`.
 
 ### what are the considerations you have to make when creating applications for this field
 
