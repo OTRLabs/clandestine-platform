@@ -33,7 +33,7 @@ The app is built around [Litestar](https://litestar.dev) as the backend & main "
 
 The `UI` is designed to be lightweight in terms of size. The goal is to make the delivery of the `UI` when fetching `HTML`/`HTMX` from the server a *fast* and *efficient* process.
 
-## UI
+#### Dashboard Components:
 
 We are going to focus on making our HTMX based UI very “component oriented” similar to React. This is because we want to give each element of the application the attention to detail it needs to make the application feel like a “modern application”.
 
