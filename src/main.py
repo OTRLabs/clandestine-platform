@@ -1,14 +1,11 @@
 
-from cryptcloud.application import create_litestar_app
+
+
+def build_conti_app():
+    pass
 
 def main():
-    # Create an instance of the Litestar application
-    app = create_litestar_app()
-    
-    # Run the application
-    app.run()
-
-
-
-if __name__ == "__main__":
+    conti_app = build_conti_app()
+    return conti_app
+if __name__ == '__main__':
     main()
