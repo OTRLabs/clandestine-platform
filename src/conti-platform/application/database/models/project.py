@@ -12,6 +12,7 @@ if TYPE_CHECKING:
     from .team import Team
     from .user import User
     from .task import Task
+    from .scope import Scope
 
 class Project(UUIDAuditBase):
     __tablename__ = "project"
@@ -25,6 +26,6 @@ class Project(UUIDAuditBase):
     
     project_creator: Mapped[User] = relationship("User", back_populates="project", uselist=False, lazy="joined")
     team_assigned: Mapped[Team] = relationship("Team", back_populates="project", uselist=False, lazy="joined")
-    
+    project_scope: Mapped[Scope] = relationship("Scope", back_populates="project", uselist=False, lazy="joined")
     tasks: Mapped[list[Task]] = relationship("Task", back_populates="project", uselist=True, lazy="joined")
     
