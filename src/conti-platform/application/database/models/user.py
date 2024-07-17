@@ -12,7 +12,7 @@ if TYPE_CHECKING:
     #from .oauth_account import UserOauthAccount
     #from .team_member import TeamMember
     from .user_role import UserRole
-    
+    from .team_member import TeamMember
     
 class User(UUIDAuditBase):
     __tablename__ = "user_account"
@@ -26,4 +26,16 @@ class User(UUIDAuditBase):
     
     password_hash: Mapped[str] = mapped_column(String(255), nullable=False, comment="User password")
     
-    
+    roles: Mapped[list[UserRole]] = relationship(
+        back_populates="user",
+        lazy="selectin",
+        uselist=True,
+        cascade="all, delete",
+    )
+    teams: Mapped[list[TeamMember]] = relationship(
+        back_populates="user",
+        lazy="selectin",
+        uselist=True,
+        cascade="all, delete",
+        viewonly=True,
+    )
