@@ -11,7 +11,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 if TYPE_CHECKING:
     #from .oauth_account import UserOauthAccount
     #from .team_member import TeamMember
-    #from .user_role import UserRole
+    from .user_role import UserRole
     
     
 class User(UUIDAuditBase):
@@ -22,4 +22,5 @@ class User(UUIDAuditBase):
     name: Mapped[str] = mapped_column(String(255), nullable=False, comment="User name")
     email: Mapped[str] = mapped_column(String(255), nullable=False, unique=True, comment="User email address")
     password_hash: Mapped[str] = mapped_column(String(255), nullable=False, comment="User password")
+    
     
