@@ -19,7 +19,7 @@ if TYPE_CHECKING:
 
 
 class Tag(UUIDAuditBase, SlugKey, UniqueMixin):
-    """Tag."""
+    """Tag. Tags are used to categorize teams."""
 
     __tablename__ = "tag"
     name: Mapped[str] = mapped_column(index=False)
