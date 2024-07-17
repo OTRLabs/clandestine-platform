@@ -19,5 +19,7 @@ class User(UUIDAuditBase):
     __table_args__ = {"comment": "User accounts for application access"}
     __pii_columns__ = ["email"]
     
+    name: Mapped[str] = mapped_column(String(255), nullable=False, comment="User name")
     email: Mapped[str] = mapped_column(String(255), nullable=False, unique=True, comment="User email address")
     password_hash: Mapped[str] = mapped_column(String(255), nullable=False, comment="User password")
+    
