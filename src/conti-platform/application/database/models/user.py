@@ -21,6 +21,9 @@ class User(UUIDAuditBase):
     
     name: Mapped[str] = mapped_column(String(255), nullable=False, comment="User name")
     email: Mapped[str] = mapped_column(String(255), nullable=False, unique=True, comment="User email address")
+    xmpp: Mapped[str] = mapped_column(String(255), nullable=True, comment="User XMPP address")
+    user_role: Mapped[UserRole] = relationship("UserRole", back_populates="user", uselist=False, lazy="joined")
+    
     password_hash: Mapped[str] = mapped_column(String(255), nullable=False, comment="User password")
     
     
