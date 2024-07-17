@@ -8,7 +8,10 @@ from advanced_alchemy.base import UUIDAuditBase
 from sqlalchemy import String, Date
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-
+if TYPE_CHECKING:
+    from .team import Team
+    from .user import User
+    from .task import Task
 
 class Project(UUIDAuditBase):
     __tablename__ = "project"
@@ -18,5 +21,10 @@ class Project(UUIDAuditBase):
     project_description: Mapped[str] = mapped_column(String(255), nullable=False, comment="Project description")
     project_status: Mapped[str] = mapped_column(String(255), nullable=False, comment="Project status")
     project_start_date: Mapped[date] = mapped_column(Date, nullable=False, comment="Project start date")
+    project_end_date: Mapped[date] = mapped_column(Date, nullable=False, comment="Project end date")
     
+    project_creator: Mapped[User] = relationship("User", back_populates="project", uselist=False, lazy="joined")
+    team_assigned: Mapped[Team] = relationship("Team", back_populates="project", uselist=False, lazy="joined")
+    
+    tasks: Mapped[list[Task]] = relationship("Task", back_populates="project", uselist=True, lazy="joined")
     
