@@ -9,8 +9,8 @@
     "noEmit": false,
     "baseUrl": ".",
     "paths": {
-      "$lib": ["./src/lib"],
-      "$lib/*": ["./src/lib/*"]
+      "$lib": ["resources/lib"],
+      "$lib/*": ["resources/lib/*"]
     }
   },
   "include": ["vite.config.ts"]

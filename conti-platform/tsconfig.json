@@ -15,14 +15,14 @@
      */
     "baseUrl": ".",
     "paths": {
-      "$lib": ["./src/lib"],
-      "$lib/*": ["./src/lib/*"],
+      "$lib": ["resources/lib"],
+      "$lib/*": ["resources/lib/*"],
     },
     "allowJs": true,
     "checkJs": true,
     "isolatedModules": true,
     "moduleDetection": "force"
   },
-  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"],
+  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "resources/main.ts", "resources/vite-env.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }],
 }
