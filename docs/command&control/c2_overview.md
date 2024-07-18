@@ -15,8 +15,10 @@ All of these projects are extremely impressive
 ## Inspirational Projects & Research
 
 ### Starkiller / Empire
+**Links**
+- [Starkiller / Empire Github](https://github.com/BC-SECURITY/Starkiller)
 
-Honestly an awesome project. 
+![Starkiller Graph View](docs/assets/starkiller_graph_view.gif)
 
 - I like the graph based GUI that is paywalled. I love canvas + node based visualization for operations. Like Maltego or open BAS
 - Excellent controls over the listeners from the web UI via a form. Being able to just open up a new port is awesome
@@ -45,7 +47,7 @@ I would like to further analyze what they did that made so many devs want to use
 
 **Mythic downsides**
 
-- I could just be dumb but why does it launch every time I boot my laptop lol
+- I could just be dumb (i am.) but why does it launch every time I boot my laptop lol
 - react for UI. Too heavy for our use case.
 
 ### Caldera
