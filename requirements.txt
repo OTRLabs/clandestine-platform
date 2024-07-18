@@ -1,6 +1,7 @@
 litestar
 sqlalchemy
 litestar-users
+litestar-saq
 advanced-alchemy
 bcrypt
 python-dotenv

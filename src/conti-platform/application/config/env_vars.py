@@ -28,6 +28,10 @@ BASE_DIR: Final[Path] = module_to_os_path(DEFAULT_MODULE_NAME)
 
 TRUE_VALUES = {"True", "true", "1", "yes", "Y", "T"}
 load_dotenv()
+
+
+
+
 class DatabaseConfig:
     
     DUCKDB_DATABASE_HOST: str = os.getenv("DUCKDB_DATABASE_HOST")
@@ -36,7 +40,12 @@ class DatabaseConfig:
     DUCKDB_DATABASE_USER: str = os.getenv("DUCKDB_DATABASE_USER")
     DUCKDB_DATABASE_PASSWORD: str = os.getenv("DUCKDB_DATABASE_PASSWORD")
     
+
+class RedisConfig:
     
+    REDIS_URL: str = os.getenv("REDIS_URL")
+
+
 class TorConfig:
     
     TOR_HOST: str = os.getenv("TOR_HOST")

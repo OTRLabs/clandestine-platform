@@ -3,7 +3,7 @@ from litestar.static_files import StaticFilesConfig
 from litestar.contrib.jinja import JinjaTemplateEngine
 from litestar.response import Template
 from litestar.template.config import TemplateConfig
-
+from litestar_saq import QueueConfig, SAQConfig, SAQPlugin
 ## build the application
 def create_litestar_app() -> Litestar:
     

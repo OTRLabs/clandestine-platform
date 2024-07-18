@@ -14,7 +14,7 @@ if TYPE_CHECKING:
     from .user import User
     from .task import Task
     from .scope import Scope
-
+    from .agent_group import AgentGroup
 class Agent(UUIDAuditBase):
     '''AI based agents for the application'''
     __tablename__ = "agent"
@@ -33,3 +33,4 @@ class Agent(UUIDAuditBase):
     team_assigned: Mapped[Team] = relationship("Team", back_populates="agent", uselist=False, lazy="joined")
     agent_tasks: Mapped[list[Task]] = relationship("Task", back_populates="agent", uselist=True, lazy="joined")
     agent_scope: Mapped[Scope] = relationship("Scope", back_populates="agent", uselist=False, lazy="joined")
+    agent_group: Mapped[AgentGroup] = relationship("AgentGroup", back_populates="agent", uselist=False, lazy="joined")
