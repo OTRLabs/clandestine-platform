@@ -19,14 +19,20 @@ class User(UUIDAuditBase):
     __table_args__ = {"comment": "User accounts for application access"}
     __pii_columns__ = ["email"]
     
-    name: Mapped[str] = mapped_column(String(255), nullable=False, comment="User name")
-    email: Mapped[str] = mapped_column(String(255), nullable=False, unique=True, comment="User email address")
-    xmpp: Mapped[str] = mapped_column(String(255), nullable=True, comment="User XMPP address")
+    user_name: Mapped[str] = mapped_column(String(255), nullable=False, comment="User name")
+    user_display_name: Mapped[str] = mapped_column(String(255), nullable=False, comment="User display name (public name. think like your @ on twitter)")
+    user_login_name: Mapped[str] = mapped_column(String(255), nullable=False, comment="User login name, private name for login")
+    user_email: Mapped[str] = mapped_column(String(255), nullable=False, unique=True, comment="User email address")
+    user_xmpp: Mapped[str] = mapped_column(String(255), nullable=True, comment="User XMPP address")
+    user_xmpp_encryption: Mapped[str] = mapped_column(String(255), nullable=True, comment="User XMPP encryption") # // create an Enum for this
+    # user_prefered_contact: Mapped[str] = mapped_column(String(255), nullable=True, comment="User prefered contact") 
+    # ## ^^ // create an Enum for this
     user_pgp_key: Mapped[UserPGPKey] = relationship("UserPGPKey", back_populates="user", uselist=False, lazy="joined")
+    user_pgp_fingerprint: Mapped[str] = mapped_column(String(40), nullable=True, comment="PGP key fingerprint")
     user_role: Mapped[UserRole] = relationship("UserRole", back_populates="user", uselist=False, lazy="joined")
     
     password_hash: Mapped[str] = mapped_column(String(255), nullable=False, comment="User password")
-    
+    user_phishing_security_phrase: Mapped[str] = mapped_column(String(255), nullable=True, comment="User phishing security phrase")
     roles: Mapped[list[UserRole]] = relationship(
         back_populates="user",
         lazy="selectin",
