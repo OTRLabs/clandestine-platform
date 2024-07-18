@@ -4,6 +4,8 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
+    "types": ["node", "svelte"],
+
     "resolveJsonModule": true,
     /**
      * Typecheck JS in `.svelte` and `.js` files by default.
@@ -14,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "$lib": ["./src/lib"],
-      "$lib/*": ["./src/lib/*"]
+      "$lib/*": ["./src/lib/*"],
     },
     "allowJs": true,
     "checkJs": true,
