@@ -30,7 +30,9 @@
     "formsnap": "^1.0.1",
     "lucide-svelte": "^0.408.0",
     "shadcn-svelte": "^0.10.7",
+    "sveltekit-superforms": "^2.16.1",
     "tailwind-merge": "^2.4.0",
-    "tailwind-variants": "^0.2.1"
+    "tailwind-variants": "^0.2.1",
+    "zod": "^3.23.8"
   }
 }

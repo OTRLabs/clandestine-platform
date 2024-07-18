@@ -26,12 +26,18 @@ importers:
       shadcn-svelte:
         specifier: ^0.10.7
         version: 0.10.7
+      sveltekit-superforms:
+        specifier: ^2.16.1
+        version: 2.16.1(@sveltejs/kit@2.5.18(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.4(@types/node@20.14.11)))(svelte@4.2.18)(vite@5.3.4(@types/node@20.14.11)))(svelte@4.2.18)
       tailwind-merge:
         specifier: ^2.4.0
         version: 2.4.0
       tailwind-variants:
         specifier: ^0.2.1
         version: 0.2.1(tailwindcss@3.4.6)
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.1.1
@@ -2683,5 +2689,4 @@ snapshots:
       zod: 3.23.8
     optional: true
 
-  zod@3.23.8:
-    optional: true
+  zod@3.23.8: {}

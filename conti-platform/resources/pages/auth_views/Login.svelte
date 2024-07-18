@@ -1,8 +1,8 @@
 <script lang="ts">
-	import UserAuthForm from "./(components)/user-auth-form.svelte";
-	import { Button } from "$lib/registry/default/ui/button/index.js";
-	import AuthenticationLight from "$lib/img/examples/authentication-light.png?enhanced";
-	import AuthenticationDark from "$lib/img/examples/authentication-dark.png?enhanced";
+    import { Button } from "bits-ui";
+    import { UserAuthForm } from "$lib/components/auth/Login/UserLoginAuthForm.svelte";
+    import AuthenticationLight from "$lib/assets/images/authentication-light.svg";
+    import AuthenticationDark from "$lib/assets/images/authentication-dark.svg";
 </script>
 
 <div class="md:hidden">
@@ -42,22 +42,11 @@
 	</div>
 	<div class="lg:p-8">
 		<div class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
-			<div class="flex flex-col space-y-2 text-center">
-				<h1 class="text-2xl font-semibold tracking-tight">Want an account?</h1>
-				<p class="text-sm text-muted-foreground">
-					Enter your request in the form below to contact the platform admins.
-				</p>
-                <form class="">
-                    <Form.Field>
-                      <Form.Control>
-                        <Form.Label />
-                        <!-- Any Form input component -->
-                      </Form.Control>
-                      <Form.Description />
-                      <Form.FieldErrors />
-                    </Form.Field>
-                </form>
-			</div>
+			
+
+
+
+
 			<UserAuthForm />
 			<p class="px-8 text-center text-sm text-muted-foreground">
 				By clicking continue, you agree to our
