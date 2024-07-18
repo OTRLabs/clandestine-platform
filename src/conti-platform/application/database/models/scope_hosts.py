@@ -9,13 +9,15 @@ from sqlalchemy import String, Date, Integer
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 if TYPE_CHECKING:
+    from .host import Host
     from .scope_host_service import ScopeHostService
     
     
-class ScopeHosts(UUIDAuditBase):
+class ScopeHosts(Host):
     '''Hosts in a projects scope'''
-    name: Mapped[str] = mapped_column(String(255), nullable=False, comment="Host name")
-    ip: Mapped[str] = mapped_column(String(255), nullable=False, comment="Host IP")
-    open_ports: Mapped[list[int]] = mapped_column(String(255), nullable=False, comment="Open ports")
-    services: Mapped[list[ScopeHostService]] = relationship("ScopeHostService", back_populates="hosts", uselist=True, lazy="joined")
+
+    __tablename__ = "scope_hosts"
+    __table_args__ = {"comment": "Hosts in a projects scope"}
     
+    hosts_in_scope: Mapped[list[Host]] = relationship("ProjectInfrastructure", back_populates="hosts", uselist=False, lazy="joined")
+    hosts_out_of_scope: Mapped[list[Host]] = relationship("ProjectInfrastructure", back_populates="hosts", uselist=False, lazy="joined")

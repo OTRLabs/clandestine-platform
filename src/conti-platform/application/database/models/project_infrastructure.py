@@ -11,5 +11,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 class ProjectInfrastructure(UUIDAuditBase):
     __tablename__ = "project_infrastructure"
-    __table_args__ = {"comment": "Project infrastructure for the application"}
+    __table_args__ = {"comment": "Infrastructure used for a project"}
+    
     
