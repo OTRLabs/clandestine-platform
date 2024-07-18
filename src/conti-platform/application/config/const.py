@@ -10,9 +10,8 @@ if TYPE_CHECKING:
     from litestar.data_extractors import RequestExtractorField, ResponseExtractorField
 
 
-DEFAULT_MODULE_NAME = "app"
+DEFAULT_MODULE_NAME = "conti-platform"
 BASE_DIR: Final[Path] = module_to_os_path(DEFAULT_MODULE_NAME)
-DEFAULT_MODULE_NAME = "app"
 BASE_DIR: str = "/"
 TRUE_VALUES = {"True", "true", "1", "yes", "Y", "T"}
 ROOT_ROUTE: str = '/'
@@ -22,3 +21,4 @@ API_ROUTES: str = '/api'
 TRUE_VALUES = {"True", "true", "1", "yes", "Y", "T"}
 
 
+DEFAULT_USER_ROLE: str = "member"
