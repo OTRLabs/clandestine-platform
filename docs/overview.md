@@ -43,7 +43,8 @@ On one hand, I want to say “chill I am a one man show, do not expect this appl
 ### Backend Tech Stack
 - [Litestar](https://litestar.dev) 
 - [DuckDB](https://duckdb.org/) (For user storage)
-- 
+- [Docker](https://docker.com)
+
 ## 2.2 Dashboard / UI:
 ### UI Tech Stack
 - [Litestar HTMX Integration](https://docs.litestar.dev/2/usage/htmx.html) 
@@ -53,26 +54,31 @@ On one hand, I want to say “chill I am a one man show, do not expect this appl
 
 
 ## 2.3 Storage:
-- [Document Storage](docs/storage/documents.md)
-- [Database](docs/storage/database.md)
-
+- [**Document Storage**](docs/storage/documents.md)
+- [**Database**](docs/storage/database.md)
+- [**Go-Git**]([https://](https://github.com/go-git/go-git))
 ## 2.4 AI/ML
 ### AI/ML Tech Stack
 - [Fabric](https://github.com/danielmiessler/fabric)
-
+- [Ollama](https://ollama.com)
+- [HuggingFace](https://huggingface.co)
+  
 ## 2.5 Data Ingestion
 ### Data Ingestion Tech Stack
 - Docker based scripts
-- Project Discovery Tools
+- [Project Discovery](https://projectdiscovery.io) Tools
 - [Network Scanning](docs/data_ingestion/network_scanning.md)
 
+## 2.6 Networking Software
+- [OnionCat](https://github.com/rahra/onioncat)
+- [CoreDNS](https://coredns.io/)
 
 
 # 3. Practices, Goals & Considerations:
 ---
 
 ## 3.1 Goals:
-- **Privacy & Security**: The main goal of this platform is to provide a secure platform for organizations to conduct offensive operations. This means that the platform should be secure, and should not leak information about the organization using it.
+- **Privacy & Security**: The main goal of this platform is to provide a secure platform for organizations to conduct offensive operations, preform recon & develop their capabilities.. This means that the platform should be secure, and should not leak information about the organization using it.
 - **Ease of Use**: The platform should be easy to use, and should not require a lot of technical knowledge to use. This means that the platform should be user friendly, and should have a simple and intuitive interface. 
 
 
@@ -92,14 +98,31 @@ That being said:
 #### Secure Access / Ingress Points & Eggress Points
 I have a few ideas on how to access the UI:
 
-- [OnionCat](https://www.onioncat.org/): This is a VPN service that is designed to be easy to use and set up. It is designed to be self hosted & operate over `Tor` & `I2P`
-- [HeadScale](https://headscale.net/) / [Tailscale](https://tailscale.com): This is a VPN service that is designed to be easy to use and set up. It is designed to be self hosted
+- [**OnionCat**](https://www.onioncat.org/): This is a VPN service that is designed to be easy to use and set up. It is designed to be self hosted & operate over `Tor` & `I2P`
+- [**HeadScale**](https://headscale.net/) / [Tailscale](https://tailscale.com): This is a VPN service that is designed to be easy to use and set up. It is designed to be self hosted
 
 #### Service Exposure
 Hidden Services:
--  [Tor Hidden Services](https://www.torproject.org/docs/tor-onion-service.html.en) are a great way to expose services to the internet without exposing your IP address. This is a great way to expose the UI to the internet without exposing your IP address. 
+-  [**Tor Hidden Services**](https://www.torproject.org/docs/tor-onion-service.html.en) are a great way to expose services to the internet without exposing your IP address. This is a great way to expose the UI to the internet without exposing your IP address. 
+- [**Yggdrasil Services**](https://yggdrasil-network.github.io/services.html)
+- [**I2P**](https://geti2p.net/en/)
 
 
+#### Private/Anonymous Internet Browsing / Scanning
+##### Mix Networks
+All [Mix-Nets](https://en.wikipedia.org/wiki/Mix_network) are accessible as `SOCKS proxies` & are intended to be used as the **first hop** in [proxychains](https://github.com/rofl0r/proxychains-ng)
+- [**Torsocks**](https://gitlab.torproject.org/tpo/core/torsocks)
+- [**Nym Mixnet**](https://nymtech.net/)
+- [**Arti**](https://arti.torproject.org/)
+- [**Lokinet**](https://lokinet.org/)
+
+##### Networking Tools
+- [**Proxychains**](https://github.com/rofl0r/proxychains-ng)
+- [**Wireguard**](https://www.wireguard.com/)
+- [**SSHuttle**](https://github.com/sshuttle/sshuttle)
+- [**Docker Containers**](https://hub.docker.com) for isolation
+  -  [dockage/Tor-Privoxy](https://github.com/dockage/tor-privoxy)
+- [**Honeyd**](https://honeyd.org)
 
 # 3rd party services
 
@@ -113,12 +136,16 @@ generally speaking, if both of these statements are true about the service, we a
 
 These services will be optional, and the platform will be useful even without paying
 
- we will have a wallet management system within the app but users maintain full control over their wallet. 
+we will have a wallet management system within the app but users maintain full control over their wallet. 
 
 Rather than risk users violating services acceptable use policy, the wallets are used to execute functions within the automations preformed by the application 
 
 ## Services:
 ### Cloud providers 
 
-- [**sporestack**](docs/3rd_party_services/sporestack.md)
-- 
+- [**sporestack**](docs/3rd_party_services/sporestack.md) for hosting
+
+### Crypto Swaps
+- [**Wizard Swap**](https://wizardswap.io) for crypto swaps
+
+**Need to find proxy provider with `API`**

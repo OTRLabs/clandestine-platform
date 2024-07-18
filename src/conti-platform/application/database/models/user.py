@@ -13,7 +13,7 @@ if TYPE_CHECKING:
     #from .team_member import TeamMember
     from .user_role import UserRole
     from .team_member import TeamMember
-    
+    from .user_pgpkey import UserPGPKey
 class User(UUIDAuditBase):
     __tablename__ = "user_account"
     __table_args__ = {"comment": "User accounts for application access"}
@@ -22,6 +22,7 @@ class User(UUIDAuditBase):
     name: Mapped[str] = mapped_column(String(255), nullable=False, comment="User name")
     email: Mapped[str] = mapped_column(String(255), nullable=False, unique=True, comment="User email address")
     xmpp: Mapped[str] = mapped_column(String(255), nullable=True, comment="User XMPP address")
+    user_pgp_key: Mapped[UserPGPKey] = relationship("UserPGPKey", back_populates="user", uselist=False, lazy="joined")
     user_role: Mapped[UserRole] = relationship("UserRole", back_populates="user", uselist=False, lazy="joined")
     
     password_hash: Mapped[str] = mapped_column(String(255), nullable=False, comment="User password")
