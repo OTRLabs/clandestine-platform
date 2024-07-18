@@ -27,7 +27,9 @@
     "@internationalized/date": "^3.5.4",
     "bits-ui": "^0.21.12",
     "clsx": "^2.1.1",
+    "formsnap": "^1.0.1",
     "lucide-svelte": "^0.408.0",
+    "shadcn-svelte": "^0.10.7",
     "tailwind-merge": "^2.4.0",
     "tailwind-variants": "^0.2.1"
   }
