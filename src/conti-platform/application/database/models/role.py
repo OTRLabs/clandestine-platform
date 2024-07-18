@@ -25,3 +25,4 @@ class Role(UUIDAuditBase, SlugKey):
         lazy="noload",
         viewonly=True,
     )
+    
