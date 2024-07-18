@@ -29,3 +29,5 @@ class Project(UUIDAuditBase):
     project_scope: Mapped[Scope] = relationship("Scope", back_populates="project", uselist=False, lazy="joined")
     tasks: Mapped[list[Task]] = relationship("Task", back_populates="project", uselist=True, lazy="joined")
     project_components: Mapped[list[ProjectComponent]] = relationship("ProjectComponent", back_populates="project", uselist=True, lazy="joined")
+    
+    

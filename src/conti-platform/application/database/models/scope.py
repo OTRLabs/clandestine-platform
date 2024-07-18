@@ -12,7 +12,7 @@ if TYPE_CHECKING:
     from .team import Team
     from .user import User
     from .task import Task    
-
+    from .scope_hosts import ScopeHosts
 class Scope(UUIDAuditBase):
     __tablename__ = "scope"
     __table_args__ = {"comment": "Scope for the application"}
@@ -25,7 +25,7 @@ class Scope(UUIDAuditBase):
     
     scope_creator: Mapped[User] = relationship("User", back_populates="scope", uselist=False, lazy="joined")
     team_assigned: Mapped[Team] = relationship("Team", back_populates="scope", uselist=False, lazy="joined")
-    
+    hosts: Mapped[list[ScopeHosts]] = relationship("ScopeHosts", back_populates="scope", uselist=True, lazy="joined")
     tasks: Mapped[list[Task]] = relationship("Task", back_populates="scope", uselist=True, lazy="joined")
     
     def __repr__(self):

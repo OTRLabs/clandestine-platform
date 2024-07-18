@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 class Repository(UUIDAuditBase):
     __tablename__ = "repository"
     __table_args__ = {"comment": "Repository containing code relevant to a project in the application"}
-    
+    repository_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True, nullable=False, comment="Repository ID")
     repository_name: Mapped[str] = mapped_column(String(255), nullable=False, comment="Repository name")
     repository_description: Mapped[str] = mapped_column(String(255), nullable=False, comment="Repository description")
     repository_url: Mapped[str] = mapped_column(String(255), nullable=False, comment="Repository URL in the Git instance")
