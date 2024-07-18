@@ -1,0 +1,19 @@
+[project]
+name = "conti-platform"
+version = "0.0.2"
+description = "Default template for PDM package"
+authors = [
+    {name = "Cam", email = "cammclain@skiff.com"},
+]
+dependencies = []
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "apache-2.0"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true

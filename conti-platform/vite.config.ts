@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [svelte()],
   resolve: {
     alias: {
-      $components: 'src-2/src/components',
+      $components: 'src/src/components',
     },
   },
 })
