@@ -1,24 +1,75 @@
-## Dashboard / UI:
+### Dashboard / UI:
 
-### UI Tech Stack
+#### UI Tech Stack
 
-- [Litestar HTMX Integration](https://docs.litestar.dev/2/usage/htmx.html) 
-- [HTMX](https://htmx.org/) 
-- [Jinja2 Templates](https://docs.litestar.dev/2/reference/contrib/jinja.html) 
-- [Pure CSS](https://purecss.io/)
+- [Vite](https://vitejs.dev/)
+- [Litestar Vite Integration](https://github.com/cofin/litestar-vite)
+- [Svelte](https://svelte.dev/)
+- [Jinja2 Templates](https://docs.litestar.dev/2/reference/contrib/jinja.html)
+- [Shadcn UI - Svelte Port](https://shadcn-svelte.com/)
+- [Tor Hidden Services](https://tpo.pages.torproject.net/onion-services/portal/apps/web/)
+
+### Requirements / Goals / Plans / Ideas
+
+#### Limitations & Constraints
+- We want to make an effort to make the `HTML views` as small as possible in size to deliver them effectively over `Tor`.
 
 ### Dashboard Description:
 
-The `UI` is designed to be lightweight in terms of size. The goal is to make the delivery of the `UI` when fetching `HTML`/`HTMX` from the server a *fast* and *efficient* process.
+The `UI`/`dashboard` is designed to be lightweight in terms of size. The goal is to make the delivery of the `UI` when fetching `HTML`/`Svelte` components from the server a *fast* and *efficient* process.
+
+We aim to design a dashboard-style system, where you are immediately directed to authenticate upon visiting the `root route` of the site.
+We would like for there to be:
+- a `vertical navigation bar` on the **left side** of the screen which focuses on `application functionality`, i.e., the features you came to the app for.
+- positioned at the top left corner, there is a `horizontal navigation bar` with `drop-down menus`. These are more for `platform settings`, `application management`, `configs`, etc.
+
+### Dashboard Design & Development
+
+#### Real-Time Data
+Real-time data should be pushed to the application via [Litestar Websockets](https://docs.litestar.dev/2/usage/websockets.html#websockets).
+
+#### Dashboard Views
+We will focus on building `views` using `Svelte` components served via the `Litestar` application. Using Vite for bundling and Svelte for creating reactive components will ensure a smooth and dynamic user experience.
+
+#### Dashboard Reactivity
+
+Using client-side scripting within this application is somewhat controversial among Tor users. While it introduces risks, we believe that the improved user experience provided by reactivity in web applications justifies its use.
+
+To minimize risks, we will:
+- Ensure minimal and secure JavaScript usage.
+- Focus on Svelte's strengths in reactivity and component-based architecture.
+- Use Litestar Websockets for real-time data, ensuring efficient and secure data handling.
 
 #### Dashboard Components:
 
-We are going to focus on making our HTMX based UI very “component oriented” similar to React. This is because we want to give each element of the application the attention to detail it needs to make the application feel like a “modern application”.
+Our `Svelte` based `dashboard UI` will be very “component oriented”. 
 
-I did not know this until recently but these components have a sort of set of “standards”. Like how you expect a context menu to pop up when you right click. There are just behaviors that are considered “best practices” to implement. 
+The goal is to break each `view` down into individual sets of `Svelte components`. This will allow us to:
+- Ensure each component gets the attention it needs for a polished, modern application feel.
+- Implement best practices and standard behaviors (e.g., context menus on right-click).
 
-Dividing the application into HTMX/Jinja template based components, where each component of the UI is a .html.j2 file that contains a specific element or specific set of elements in a set state that can be called to render that state on the users browser, as this allows us to pay much more attention to each section of the UI and implement proper functionality to make for the best user experience. The end goal is to reduce the amount of “janky” experiences in the client side, where things behave in unexpected and unsettling ways on the client side.
+Each component will be designed to:
+- Be lightweight and efficient, reducing the overall size of the HTML views.
+- Leverage Svelte’s reactivity to provide a dynamic user experience without extensive JavaScript.
 
-It can be expected that this application will be compatible with the Tor browser though there are some caveats. The main issue is that to use the UI, your Tor browser must have client side scripting enabled. This means that it is incompatible with the “safest settings” on Tor Browser. This means that you may risk deanon if someone runs JS on your browser, so if you want to use Tor it is best to use a host that routes all traffic through Tor like whonix / tails / qubes.
+### Example Migration Plan
 
+1. **Identify Core Components**:
+   - Identify key components or views that would benefit the most from Svelte’s reactivity and efficiency.
+   - Start with those that are simpler to rewrite and have the most impact on user experience.
 
+2. **Recreate Components in Svelte**:
+   - Recreate these components using Svelte, leveraging its reactive features and component model.
+   - Integrate Litestar Websockets for real-time updates within Svelte components.
+
+3. **Test and Optimize**:
+   - Test the Svelte components thoroughly to ensure they are performing well and the payload size is optimized.
+   - Compare with the current HTMX implementation to quantify the improvements.
+
+4. **Gradual Replacement**:
+   - Replace HTMX components with Svelte counterparts incrementally, ensuring stability and performance are maintained.
+   - Continue to gather user feedback and make adjustments as needed.
+
+### Conclusion
+
+By transitioning to Svelte and Vite, we aim to create a lightweight, efficient, and reactive dashboard UI that aligns with our goals of performance and user experience. This approach leverages the strengths of Svelte in building modern, component-based web applications while ensuring the overall system remains secure and performant for Tor users.
