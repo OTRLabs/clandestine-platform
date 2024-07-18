@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [svelte()],
   resolve: {
     alias: {
-      $components: 'src/src/components',
+      $components: 'conti-platform/src/components',
     },
   },
 })
