@@ -6,3 +6,4 @@ advanced-alchemy
 bcrypt
 python-dotenv
 docker
+uvicorn
