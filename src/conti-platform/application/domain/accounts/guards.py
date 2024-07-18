@@ -5,12 +5,12 @@ from typing import TYPE_CHECKING, Any
 from litestar.exceptions import PermissionDeniedException
 from litestar.security.jwt import OAuth2PasswordBearerAuth
 
-from app.config import constants
-from app.config.app import alchemy
-from app.config.base import get_settings
-from app.db.models import User
-from app.domain.accounts import urls
-from app.domain.accounts.dependencies import provide_users_service
+from ...config import constants
+#from ...config.app import alchemy
+from ...config.base import get_settings
+from ...database.models import User
+from ...domain.accounts import urls
+from ...domain.accounts.dependencies import provide_users_service
 
 if TYPE_CHECKING:
     from litestar.connection import ASGIConnection
