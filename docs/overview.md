@@ -1,6 +1,29 @@
 # Conti Platform: A Platform for Organizations Hacking the Planet
 ---
 
+The goal of the conti platform is to focus on providing a centralized “intranet” like platform based around the mitre Att&ck framework
+
+It’s primary purpose is to provide an “off the record” location for collaboration & development of an offensive organization’s capabilities.
+
+The main goal is to be a hub of intelligence for an organizations operations. Ideally you would be able to pour data into this platform and it would be able to provide advanced insights & analysis of your situation(s)
+
+The application will work primarily as a monolith Litestar application with additional containers for external services such as:
+
+It is built to be accessed via Tor & other “dark net”/mix networks to protect operators, and minimize likelihood of detection. The goal is to have conti system exist as a hub, outside of the Standard internet. I anm hesitant to use the word intranet, but in a sense, it is an internal network of tools and generally make efforts to obfuscate activities & collaboration, only exposing yourself on your terms and never directly. 
+
+In addition to these “mix networks”, we also intend to use:
+
+- proxychains
+- OpenVPN configurations
+- Docker containers to isolate the environment
+- And much more.
+
+Generally speaking the application has sacrificed speed for anonymity, however this does not mean we do not make efforts to follow best practices and implement our systems in a way that acknowledges our limitations and seeks to work around them. 
+
+- One minor example is that we are choosing to use Pure-CSS for our UI styling, as this is extremely lightweight and can reduce page refresh times especially when accessing the UI over Tor
+- we use HTMX
+- We will use the email based RAG system that, while responses take longer, the replies are much more refined and informative. This is to account for the long wait times of using local AI on budget hardware
+
 # 1. Introduction
 ---
 This project is an attempt at building what could be looked at as `Google Workspace`, but the assumes the following:
@@ -75,3 +98,27 @@ I have a few ideas on how to access the UI:
 #### Service Exposure
 Hidden Services:
 -  [Tor Hidden Services](https://www.torproject.org/docs/tor-onion-service.html.en) are a great way to expose services to the internet without exposing your IP address. This is a great way to expose the UI to the internet without exposing your IP address. 
+
+
+
+# 3rd party services
+
+It is basically a standard for most productivity tools to integrate with your other productivity tools. Our tech ecosystem is built on 3rd party dependencies. 
+With this reality it was inevitable that we would either need or want to integrate with some sort of 3rd party service or API.
+Rather than being excessively limited, and not including anything, or choosing random services for seemingly arbitrary reasons, we will attempt to include any service which offers:
+- a `Tor Hidden Service` `HTTP API`
+- Accepts `XMR` (may settle for `BTC` sometimes)
+
+generally speaking, if both of these statements are true about the service, we are happy to integrate it with conti platform.
+
+These services will be optional, and the platform will be useful even without paying
+
+ we will have a wallet management system within the app but users maintain full control over their wallet. 
+
+Rather than risk users violating services acceptable use policy, the wallets are used to execute functions within the automations preformed by the application 
+
+## Services:
+### Cloud providers 
+
+- [**sporestack**](docs/3rd_party_services/sporestack.md)
+- 
