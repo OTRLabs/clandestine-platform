@@ -12,7 +12,7 @@ if TYPE_CHECKING:
     from .team import Team
     from .user import User
     
-class Alias(UUIDAuditBase):
+class SockPuppetAlias(UUIDAuditBase):
     """Aliases used to obfuscate real identities when engaging with contacts outside of the organization or with 3rd party services"""
     __tablename__ = "alias"
     __table_args__ = {"comment": "Aliases used to obfuscate real identities when engaging with contacts outside of the organization"}
