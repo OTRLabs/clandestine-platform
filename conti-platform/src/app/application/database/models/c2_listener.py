@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     from .task import Task
     from .c2_listener_protocol import CommandNControlListenerProtocol
     from .lifetime import Lifetime
-    from .c2_agentagent import Agent
+    from .c2_implant import CommandNControlImplant
 
 class CommandNControlListener(UUIDAuditBase):
     __tablename__ = "c2_listener"
