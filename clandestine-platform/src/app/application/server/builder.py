@@ -5,7 +5,6 @@ from typing import TYPE_CHECKING, TypeVar
 
 from litestar.config.response_cache import ResponseCacheConfig, default_cache_key_builder
 from litestar.plugins import CLIPluginProtocol, InitPluginProtocol
-from litestar.security.jwt import OAuth2Login
 from litestar.stores.redis import RedisStore
 from litestar.stores.registry import StoreRegistry
 
