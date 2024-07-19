@@ -34,3 +34,4 @@ class CommandNControlImplant(UUIDAuditBase):
     c2_implant_tasks: Mapped[List[CommandNControlImplantTask]] = relationship("CommandNControlImplantTask", back_populates="c2_implant", cascade="all, delete-orphan")
     c2_listener: Mapped[CommandNControlListener] = relationship("CommandNControlListener", back_populates="c2_implant", uselist=False, lazy="joined")
     
+    
