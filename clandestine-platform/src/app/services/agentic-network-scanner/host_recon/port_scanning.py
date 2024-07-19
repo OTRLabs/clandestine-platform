@@ -17,5 +17,4 @@ class PortScanners:
         def __init__(self, target):
             self.target = target
             self.name = "nmap"
-            self.command = f"nmap -sV -sC -T4 -Pn -p- -oN {self.target}.nmap {self.target}"
-            self.output = f"{self.target}.nmap"
+            
