@@ -16,7 +16,7 @@ if TYPE_CHECKING:
     from redis.asyncio import Redis
 
 
-T = TypeVar("T")
+T: TypeVar = TypeVar("T")
 
 
 class ApplicationConfigurator(InitPluginProtocol, CLIPluginProtocol):
