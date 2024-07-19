@@ -1,7 +1,7 @@
 # Conti Platform: A Platform for Organizations Hacking the Planet
 ---
 
-The goal of the conti platform is to focus on providing a centralized “intranet” like platform based around the mitre Att&ck framework
+The goal of the `Clandestine Platform` is to focus on providing a centralized “intranet” like platform based around the [mitre Att&ck framework](https://attack.mitre.com)
 
 It’s primary purpose is to provide an “off the record” location for collaboration & development of an offensive organization’s capabilities.
 
