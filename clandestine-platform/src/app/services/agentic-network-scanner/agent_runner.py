@@ -1,8 +1,9 @@
 
 from rich import print
+import asyncio
+from ...application.database.models.llm_agent import LargeLanguageModelAgent
 
-
-async def run_agent(agent: Agent, agent_id: str, agent_queue: asyncio.Queue, agent_results: asyncio.Queue):
+async def run_agent(agent: LargeLanguageModelAgent, agent_id: str, agent_queue: asyncio.Queue, agent_results: asyncio.Queue):
     while True:
         try:
             message = await agent_queue.get()
