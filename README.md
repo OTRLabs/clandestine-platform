@@ -61,7 +61,9 @@ The **Clandestine Platform** is a proof-of-concept framework designed for organi
 
 - [Litestar Vite Integration](https://github.com/cofin/litestar-vite)
 - [Jinja2 Templates](https://docs.litestar.dev/2/reference/contrib/jinja.html)
-- [Pure CSS](https://purecss.io/)
+- [Svelte](https://svelte.dev)
+- [Shadcn UI Componenets Ported to Svelte](https://shadcn-svelte.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ### Storage
 
