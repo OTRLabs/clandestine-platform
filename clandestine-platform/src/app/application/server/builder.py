@@ -13,6 +13,7 @@ if TYPE_CHECKING:
     from litestar import Request
     from litestar.config.app import AppConfig
     from redis.asyncio import Redis
+    from ...application.database.models.user import User as UserModel
 
 
 T: TypeVar = TypeVar("T")
@@ -51,9 +52,8 @@ class ApplicationConfigurator(InitPluginProtocol, CLIPluginProtocol):
         from advanced_alchemy.exceptions import RepositoryError
         from litestar.security.jwt import Token
 
-        from app.config import constants, get_settings
-        from app.db.models import User as UserModel
-        from app.lib.exceptions import ApplicationError, exception_to_http_response
+        from ..config import constants, get_settings
+        from ..library.exceptions import ApplicationError, exception_to_http_response
 
         settings = get_settings()
         self.redis = settings.redis.get_client()
@@ -67,7 +67,6 @@ class ApplicationConfigurator(InitPluginProtocol, CLIPluginProtocol):
         app_config.signature_namespace.update(
             {
                 "Token": Token,
-                "OAuth2Login": OAuth2Login,
                 "UserModel": UserModel,
             },
         )
