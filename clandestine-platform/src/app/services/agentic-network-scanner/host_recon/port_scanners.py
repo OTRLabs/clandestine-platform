@@ -22,3 +22,4 @@ class PortScanners:
         def __init__(self, target):
             self.target = target
             self.name = "rustscan"
+            self.container_image = "rustscan/rustscan"
