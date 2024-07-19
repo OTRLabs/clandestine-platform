@@ -5,7 +5,9 @@ description = "Default template for PDM package"
 authors = [
     {name = "Cam", email = "cammclain@skiff.com"},
 ]
-dependencies = []
+dependencies = [
+    "litestar-granian>=0.5.0",
+]
 requires-python = ">=3.12"
 readme = "README.md"
 license = {text = "apache-2.0"}
