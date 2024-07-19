@@ -13,10 +13,11 @@ if TYPE_CHECKING:
     from .user import User
     
 class Alias(UUIDAuditBase):
-    """Aliases used to obfuscate real identities when engaging with contacts outside of the organization"""
+    """Aliases used to obfuscate real identities when engaging with contacts outside of the organization or with 3rd party services"""
     __tablename__ = "alias"
     __table_args__ = {"comment": "Aliases used to obfuscate real identities when engaging with contacts outside of the organization"}
     
+    alias_status: List = ["active", "inactive"]
     alias_name: Mapped[str] = mapped_column(String(255), nullable=False, comment="Alias name")
     alias_description: Mapped[str] = mapped_column(String(255), nullable=False, comment="Alias description")
     alias_status: Mapped[str] = mapped_column(String(255), nullable=False, comment="Alias status") ## Add an enum for this later

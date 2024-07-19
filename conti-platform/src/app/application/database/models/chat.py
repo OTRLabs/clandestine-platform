@@ -10,6 +10,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 if TYPE_CHECKING:
     from .chat_message import ChatMessage
     from .user import User
+    from .project import Project
 
 class Chat(UUIDAuditBase):
     __tablename__ = 'chat'
@@ -22,3 +23,5 @@ class Chat(UUIDAuditBase):
     chat_message_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0, comment='Number of messages in chat')
     chat_members: Mapped[List[User]] = relationship('User', secondary='chat_member', back_populates='chats', lazy='selectin', uselist=True, cascade='all, delete')
     chat_member_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0, comment='Number of members in chat')
+    chat_context: Mapped[Project] = relationship('Project', back_populates='chat', uselist=False, lazy='joined')
+    
