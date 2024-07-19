@@ -118,14 +118,14 @@ The **Clandestine Platform** is a proof-of-concept framework designed for organi
 
 - **Mix Networks**: Use as first hop in proxychains.
   - Torsocks
-  - Nym Mixnet
-  - Arti
-  - Lokinet
+  - [Nym Mixnet](https://nymtech.net/)
+  - [Arti](https://arti.torproject.org/)
+  - [Lokinet](https://lokinet.org/)
 
 - **Networking Tools**:
-  - Proxychains
-  - Wireguard
-  - SSHuttle
+  - [Proxychains4](https://github.com/rofl0r/proxychains-ng)
+  - [Wireguard](https://www.wireguard.com/)
+  - [SSHuttle](https://github.com/sshuttle/sshuttle)
   - Docker Containers (e.g., Tor-Privoxy)
 
 ## Third-Party Services
