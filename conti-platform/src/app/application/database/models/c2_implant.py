@@ -29,7 +29,7 @@ class CommandNControlImplant(UUIDAuditBase):
     c2_implant_listening_address: Mapped[str] = mapped_column(String, nullable=False, comment="Listen address of the implant")
     c2_implant_listening_port: Mapped[int] = mapped_column(Integer, nullable=False, comment="Listening port of the implant")
     c2_implant_protocol: Mapped[CommandNControlListenerProtocol] = relationship("CommandNControlProtocol", back_populates="implants")
-    
+    c2_implant_callback_url: Mapped[str] = mapped_column(String, nullable=False, comment="URL for the implant to callback to")
     c2_lifetime: Mapped[Lifetime] = relationship("Lifetime", back_populates="c2_implant", uselist=False, lazy="joined")
     c2_implant_tasks: Mapped[List[CommandNControlImplantTask]] = relationship("CommandNControlImplantTask", back_populates="c2_implant", cascade="all, delete-orphan")
     c2_listener: Mapped[CommandNControlListener] = relationship("CommandNControlListener", back_populates="c2_implant", uselist=False, lazy="joined")
