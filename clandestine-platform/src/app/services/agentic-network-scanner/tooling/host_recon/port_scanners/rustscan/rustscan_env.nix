@@ -35,8 +35,5 @@ in
     rustscan
     tor
     torsocks
-  ];
-
-  # Additional dependencies for Podman
-  environment.systemPackages = podmanDeps;
+  ] ++ podmanDeps;
 }
