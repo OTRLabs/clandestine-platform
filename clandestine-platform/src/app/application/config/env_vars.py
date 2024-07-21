@@ -41,6 +41,7 @@ class DatabaseConfig:
     DUCKDB_DATABASE_PASSWORD: str = os.getenv("DUCKDB_DATABASE_PASSWORD")
     
 
+
 class RedisConfig:
     
     REDIS_URL: str = os.getenv("REDIS_URL")
